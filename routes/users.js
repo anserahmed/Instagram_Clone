@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 const plm = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/Instagram");
+require('dotenv').config(); 
+
+const atlasConnection = process.env.MONGODB_URI;
+
+mongoose.connect(atlasConnection, { useNewUrlParser: true, useUnifiedTopology: 
 
 
 const userSchema = new mongoose.Schema({
